@@ -77,7 +77,7 @@ int main (int argc, char* argv[])
 	{
 		if (!*file) printf ("Option -f, --file is mandatory!\n");
 		if (mode == 'w' && !*msg) printf ("Option -m, --message is mandatory!\n");
-		if (!mode) printf ("Options -w, --write or -r, --read are mandatory!\n");
+		if (!mode) printf ("Options -w, --write or -r, --read or -i, --info  are mandatory!\n");
 		printUsage ();
 		exit (EXIT_FAILURE);
 	} else {

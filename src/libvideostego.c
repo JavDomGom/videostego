@@ -25,25 +25,57 @@ struct TypeData typeRecognition (int type)
 
 	switch (type)
     {
-		case 0x66726565: // "free" can't be configured as enum because is a reserved word.
-            typeData.name = "free";
-            typeData.description = "Free space.";
-            break;
         case ctts:
             typeData.name = "ctts";
             typeData.description = "(Composition) time to sample.";
+            break;
+        case dinf:
+            typeData.name = "dinf";
+            typeData.description = "Data information box, container.";
+            break;
+		case drm:
+            typeData.name = "drm ";
+            typeData.description = "DRM container.";
             break;
         case ftyp:
             typeData.name = "ftyp";
             typeData.description = "File type and compatibility.";
             break;
+        case 0x66726565: // "free" can't be configured as enum because is a reserved word.
+            typeData.name = "free";
+            typeData.description = "Free space.";
+            break;
+        case edts:
+            typeData.name = "edts";
+            typeData.description = "Edit list container.";
+            break;
+        case hdlr:
+            typeData.name = "hdlr";
+            typeData.description = "Handler, declares the media (handler) type.";
+            break;
+        case iods:
+            typeData.name = "iods";
+            typeData.description = "Object Descriptor container box.";
+            break;
+        case mdat:
+            typeData.name = "mdat";
+            typeData.description = "Media data container.";
+            break;
+        case mdhd:
+            typeData.name = "mdhd";
+            typeData.description = "Media header, overall information about the media.";
+            break;
+        case mdia:
+            typeData.name = "mdia";
+            typeData.description = "Container for the media information in a track.";
+            break;
         case meta:
             typeData.name = "meta";
             typeData.description = "Metadata container.";
             break;
-		case mdat:
-            typeData.name = "mdat";
-            typeData.description = "Media data container.";
+        case minf:
+            typeData.name = "minf";
+            typeData.description = "Media information container.";
             break;
 		case moov:
             typeData.name = "moov";
@@ -52,46 +84,6 @@ struct TypeData typeRecognition (int type)
 		case mvhd:
             typeData.name = "mvhd";
             typeData.description = "Movie header, overall declarations.";
-            break;
-		case drm:
-            typeData.name = "drm ";
-            typeData.description = "DRM container.";
-            break;
-		case trak:
-            typeData.name = "trak";
-            typeData.description = "Container for an individual track or stream.";
-            break;
-        case tkhd:
-            typeData.name = "tkhd";
-            typeData.description = "Track header, overall information about the track.";
-            break;
-        case edts:
-            typeData.name = "edts";
-            typeData.description = "Edit list container.";
-            break;
-        case mdia:
-            typeData.name = "mdia";
-            typeData.description = "Container for the media information in a track.";
-            break;
-        case mdhd:
-            typeData.name = "mdhd";
-            typeData.description = "Media header, overall information about the media.";
-            break;
-        case hdlr:
-            typeData.name = "hdlr";
-            typeData.description = "Handler, declares the media (handler) type.";
-            break;
-        case minf:
-            typeData.name = "minf";
-            typeData.description = "Media information container.";
-            break;
-        case vmhd:
-            typeData.name = "vmhd";
-            typeData.description = "Video media header, overall information (video track only).";
-            break;
-        case dinf:
-            typeData.name = "dinf";
-            typeData.description = "Data information box, container.";
             break;
         case stbl:
             typeData.name = "stbl";
@@ -125,10 +117,6 @@ struct TypeData typeRecognition (int type)
             typeData.name = "smhd";
             typeData.description = "Sound media header, overall information (sound track only).";
             break;
-        case iods:
-            typeData.name = "iods";
-            typeData.description = "Object Descriptor container box.";
-            break;
         case sdtp:
             typeData.name = "sdtp";
             typeData.description = "Independent and Disposable Samples Box.";
@@ -141,9 +129,21 @@ struct TypeData typeRecognition (int type)
             typeData.name = "sbgp";
             typeData.description = "Sample to Group box.";
             break;
+        case tkhd:
+            typeData.name = "tkhd";
+            typeData.description = "Track header, overall information about the track.";
+            break;
+        case trak:
+            typeData.name = "trak";
+            typeData.description = "Container for an individual track or stream.";
+            break;
         case udta:
             typeData.name = "udta";
             typeData.description = "User data.";
+            break;
+        case vmhd:
+            typeData.name = "vmhd";
+            typeData.description = "Video media header, overall information (video track only).";
             break;
         default:
             break;
