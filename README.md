@@ -9,7 +9,7 @@
 
 ## Basic overview
 
-**videostego** can be used to employ Steganography (LSB) on MPEG-4 Part 14 format video files.
+**Videostego** is a tool that you can use to write and read hidden messages in MP4 files using Steganography techniques like LSB.
 
 ## Dependencies
 
@@ -84,6 +84,9 @@ LICENSE
 ```bash
 ~$ ./videostego -f some_file.mp4 -r
 ```
+```
+"Hello world!"
+```
 
 ### To print file architecture
 
@@ -117,26 +120,26 @@ LICENSE
 │               ├───[stsc] (0x0004a4cd)     100 bytes: Sample-to-chunk, partial data-offset information.
 │               ├───[stsz] (0x0004a531)    1016 bytes: Sample sizes (framing).
 │               └───[stco] (0x0004a929)     996 bytes: Chunk offset, partial data-offset information.
-├───[trak] (0x0004ad0d)    3532 bytes: Container for an individual track or stream.
-│   │
-│   ├───[tkhd] (0x0004ad15)      92 bytes: Track header, overall information about the track.
-│   ├───[edts] (0x0004ad71)      36 bytes: Edit list container.
-│   └───[mdia] (0x0004ad95)    3396 bytes: Container for the media information in a track.
-│       │
-│       ├───[mdhd] (0x0004ad9d)      32 bytes: Media header, overall information about the media.
-│       ├───[hdlr] (0x0004adbd)      53 bytes: Handler, declares the media (handler) type.
-│       └───[minf] (0x0004adf2)    3303 bytes: Media information container.
-│           │
-│           ├───[vmhd] (0x0004adfa)      20 bytes: Video media header, overall information (video track only).
-│           ├───[dinf] (0x0004ae0e)      36 bytes: Data information box, container.
-│           └───[stbl] (0x0004ae32)    3239 bytes: Sample table box, container for the time/space map.
-│               │
-│               ├───[stsd] (0x0004ae3a)     171 bytes: Sample descriptions (codec types, initialization etc.).
-│               ├───[stts] (0x0004aee5)     152 bytes: (Decoding) time-to-sample.
-│               ├───[stss] (0x0004af7d)     112 bytes: Sync sample table (random access points).
-│               ├───[stsc] (0x0004afed)     736 bytes: Sample-to-chunk, partial data-offset information.
-│               ├───[stsz] (0x0004b2cd)    1788 bytes: Sample sizes (framing).
-│               └───[stco] (0x0004b9c9)     272 bytes: Chunk offset, partial data-offset information.
+└───[trak] (0x0004ad0d)    3532 bytes: Container for an individual track or stream.
+    │
+    ├───[tkhd] (0x0004ad15)      92 bytes: Track header, overall information about the track.
+    ├───[edts] (0x0004ad71)      36 bytes: Edit list container.
+    └───[mdia] (0x0004ad95)    3396 bytes: Container for the media information in a track.
+        │
+        ├───[mdhd] (0x0004ad9d)      32 bytes: Media header, overall information about the media.
+        ├───[hdlr] (0x0004adbd)      53 bytes: Handler, declares the media (handler) type.
+        └───[minf] (0x0004adf2)    3303 bytes: Media information container.
+            │
+            ├───[vmhd] (0x0004adfa)      20 bytes: Video media header, overall information (video track only).
+            ├───[dinf] (0x0004ae0e)      36 bytes: Data information box, container.
+            └───[stbl] (0x0004ae32)    3239 bytes: Sample table box, container for the time/space map.
+                │
+                ├───[stsd] (0x0004ae3a)     171 bytes: Sample descriptions (codec types, initialization etc.).
+                ├───[stts] (0x0004aee5)     152 bytes: (Decoding) time-to-sample.
+                ├───[stss] (0x0004af7d)     112 bytes: Sync sample table (random access points).
+                ├───[stsc] (0x0004afed)     736 bytes: Sample-to-chunk, partial data-offset information.
+                ├───[stsz] (0x0004b2cd)    1788 bytes: Sample sizes (framing).
+                └───[stco] (0x0004b9c9)     272 bytes: Chunk offset, partial data-offset information.
 ```
 
 ## Memory check
