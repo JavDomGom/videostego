@@ -12,7 +12,7 @@
 #include <ctype.h>
 
 #define PROGRAM_NAME "VideoStego"
-#define PROGRAM_VERSION "0.1.0"
+#define PROGRAM_VERSION "1.0.1"
 #define AUTHORS "Javier Dominguez Gomez"
 
 void printUsage ();
